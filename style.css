@@ -1,101 +1,92 @@
-/* Reset default styles and set base styles */
 body {
-  margin: 0; /* Remove default margins */
-  height: 100vh; /* Set height to viewport height */
+  margin: 0;
+  height: 100vh;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  background-color: #f4f4f9; /* Light background color for the page */
-  font-family: Arial, sans-serif; /* Font for the whole page */
-  color: #333; /* Default text color */
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
-/* Main container for the entire layout */
 .container {
-  display: flex; /* Enable Flexbox layout */
-  flex-direction: column; /* Set main axis direction to vertical */
-  width: 95%; /* Adjust width */
-  height: 95%; /* Adjust height */
-  max-width: 1200px; /* Limit max-width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  border-radius: 8px; /* Rounded corners */
-  overflow: hidden; /* Clip overflow content */
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 95%;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/* Header section */
 .header {
-  background-color: #4a90e2; /* Light blue header */
-  color: #fff; /* White text for header */
+  background-color: #4a90e2;
+  color: #fff;
   text-align: center;
   padding: 20px;
   font-size: 24px;
   font-weight: bold;
 }
 
-/* Content area with sidebar and main content */
 .row.content {
-  display: flex; /* Flex layout for sidebar and main content */
+  display: flex;
   flex: 1;
   box-sizing: border-box;
 }
 
-/* Sidebar and image section */
 .info {
-  background-color: #e0f7fa; /* Light blue-green background */
+  background-color: #e0f7fa;
   width: 20%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content */
+  align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  border-right: 1px solid #ddd; /* Add border to separate from main content */
+  border-right: 1px solid #ddd;
 }
 
-/* Style for profile image to center and adjust size */
 .profile-image {
   display: block;
-  max-width: 150px; /* Limit max-width of the image */
-  margin: 20px auto; /* Center the image horizontally */
-  border-radius: 50%; /* Circular image */
-  border: 2px solid #4a90e2; /* Border around the image */
+  max-width: 150px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 2px solid #4a90e2;
 }
 
-/* Sidebar styles */
 .sidebar {
   width: 100%;
   margin-top: 20px;
 }
 
 .sidebar ul {
-  list-style-type: none; /* Remove default list style */
+  list-style-type: none;
   padding: 0;
 }
 
 .sidebar li {
-  cursor: pointer; /* Change cursor on hover */
-  margin: 10px 0; /* Spacing between items */
-  padding: 10px; /* Padding inside each item */
-  background-color: #e8f1ff; /* Light background color for items */
-  border: 1px solid #c7d8f5; /* Border color for items */
-  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e8f1ff;
+  border: 1px solid #c7d8f5;
+  border-radius: 5px;
   text-align: center;
-  transition: background-color 0.3s; /* Smooth hover effect */
+  transition: background-color 0.3s;
 }
 
 .sidebar li:hover {
   background-color: #d0e2ff; /* Hover color */
 }
 
-/* Main content area */
 .right-content {
-  background-color: #fff; /* White background for main content */
+  background-color: #fff;
   width: 80%;
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto; /* Enable scrolling if content overflows */
+  overflow-y: auto;
 }
 
-/* Styling content sections */
 #content1,
 #content2 {
   padding: 20px;
@@ -104,30 +95,59 @@ body {
   margin-bottom: 20px; /* Spacing between content sections */
 }
 
+h2 {
+  color: #3a78c2;
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d0e2ff;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
 h3 {
   color: #4a90e2; /* Header color */
 }
-h2 {
-  color: #3a78c2; /* Set the color to a slightly darker blue */
-  font-size: 22px; /* Slightly larger font size than h3 */
-  margin-bottom: 15px; /* Add some space below the heading */
-  border-bottom: 2px solid #d0e2ff; /* Add a subtle bottom border */
-  padding-bottom: 5px; /* Padding to separate text from the border */
-  font-weight: bold; /* Bold text for emphasis */
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-/* Responsive design for smaller screens */
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon-link {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.icon-link:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .row.content {
-    flex-direction: column; /* Stack sidebar and content vertically */
+    flex-direction: column;
   }
 
   .info {
-    width: 100%; /* Sidebar takes full width */
-    border-right: none; /* Remove border when stacked */
-    border-bottom: 1px solid #ddd; /* Add bottom border instead */
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
   }
 
   .right-content {
-    width: 100%; /* Main content takes full width */
+    width: 100%;
   }
 }
